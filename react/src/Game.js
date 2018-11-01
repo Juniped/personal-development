@@ -154,18 +154,40 @@ class Game extends Component {
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
     }
     return (
-      <div className="Game">
-        <div className="game-board">
-          <Board
-            squares={current.squares}
-            winningLines={winningLines}
-            onClick={(i) => this.handleClick(i)}
-          />
+      <div className="Game animated fadeInDown">
+        <div className="container">
+          <div className="tile">
+            <div className="notification has-info">
+            <h3>
+              Game code is from completion and expansion of tutorial found  
+              <a href="https://reactjs.org/tutorial/tutorial.html#completing-the-game"> here</a>
+            </h3>
+            </div>
+          </div>
         </div>
-        <div className="game-info">
-          <div>{status}</div>
-          <button onClick={() => this.toggleOrder()}>{order}</button>
-          {this.renderMovesList()}
+        <hr className="hr" style={hrStyle} />
+        <div className="section">
+          {/* <br /> */}
+          <div className="container">
+            <div className="columns">
+              <div className="column is-one-quarter is-offset-one-quarter">
+                <div className="game-board">
+                  <Board
+                    squares={current.squares}
+                    winningLines={winningLines}
+                    onClick={(i) => this.handleClick(i)}
+                  />
+                </div>
+              </div>
+              <div className="column is-one-quarter">
+                <div className="game-info">
+                  <div>{status}</div>
+                  <button onClick={() => this.toggleOrder()}>{order}</button>
+                  {this.renderMovesList()}
+                </div>
+                </div>
+              </div>
+          </div>
         </div>
       </div>
     );
@@ -222,3 +244,10 @@ function calculateWinner(squares) {
   return null;
 }
   
+
+// Style Constants
+
+const hrStyle = {
+  marginBottom: "0px"
+
+}

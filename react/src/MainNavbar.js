@@ -1,20 +1,18 @@
 import React, { Component} from "react";
 import {hot} from "react-hot-loader";
+import {NavLink} from "react-router-dom";
 import img from "../static/images/SleepingPanda.gif";
 
 
-// const navbarStyle = {
-//     backgroundColor: "#ce1616",
-//     // margin: "0px",
-// }
-
-
-
-
+import "../static/css/Navbar.css";
+// impor
 class MainNavbar extends Component{
+    handleClick(i) {
+
+    } 
     render(){
         return (
-            <nav className="navbar is-black" role="navigation" arai-label="main-navigation">
+            <nav className="navbar is-dark" role="navigation" arai-label="main-navigation">
                 <div className="container">
                     <div className="navbar-brand">
                         <a className="navbar-item">
@@ -24,12 +22,11 @@ class MainNavbar extends Component{
                         </a>
                     </div>
                     <div className="navbar-menu">
-                        <a href="/" className="navbar-item has-text-warning">
-                            Home
-                        </a>
-                        <a href="/nothome" className="navbar-item has-text-warning">
-                            Not Home
-                        </a>
+                        <div className="navbar-start">
+                            <NavLink exact to="/" className="navbar-item"> Home        </NavLink>
+                            <NavLink  to="/stuff" className="navbar-item"> Stuff       </NavLink>
+                            <NavLink   to="/game" className="navbar-item"> Tic-Tac-Toe </NavLink>
+                        </div>
                     </div>
                 </div>
             </nav>

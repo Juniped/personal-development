@@ -7,9 +7,11 @@ class Tag extends Component{
     render() {
         return(
             <div className="Tag">
+                <div className="section">
                 <a href="https://bulma.io">
                     <img src={img} alt="Made with Bulma" width="128" height="24" />
                 </a> 
+                </div>
             </div>
         );
     }

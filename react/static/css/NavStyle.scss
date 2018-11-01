@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+
+@import "~bulma/bulma";
+
+$navbar-item-active-color: #ffdd57;
+
+a {
+    .navbar-item {
+        .active {
+            color: #ffdd57;
+        }
+    }
+}

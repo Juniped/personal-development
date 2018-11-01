@@ -1,11 +1,15 @@
 {
   "name": "react-flask-test",
   "version": "1.0.0",
-  "description": "",
+  "description": "Test code to connect both react and flask",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Juniped/personal-development"
   },
   "author": "",
   "license": "MIT",
@@ -17,7 +21,6 @@
     "babel-loader": "^8.0.2",
     "css-loader": "^1.0.0",
     "file-loader": "^2.0.0",
-    "style-loader": "^0.23.0",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.1",
     "webpack-dev-server": "^3.1.8"
@@ -32,7 +35,8 @@
     "npm": "^6.4.1",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "react-hot-loader": "^4.3.11",
-    "react-router-dom": "^4.3.1"
+    "react-hot-loader": "^4.3.12",
+    "react-router-dom": "^4.3.1",
+    "style-loader": "^0.23.1"
   }
 }
