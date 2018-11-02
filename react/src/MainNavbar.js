@@ -26,6 +26,7 @@ class MainNavbar extends Component{
                             <NavLink exact to="/" className="navbar-item"> Home        </NavLink>
                             <NavLink  to="/stuff" className="navbar-item"> Stuff       </NavLink>
                             <NavLink   to="/game" className="navbar-item"> Tic-Tac-Toe </NavLink>
+                            <NavLink     to="/db" className="navbar-item"> Database    </NavLink>
                         </div>
                     </div>
                 </div>

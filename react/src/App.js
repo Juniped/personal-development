@@ -5,6 +5,7 @@ import {HashRouter as Router, Route} from "react-router-dom";
 // Componenets
 import Game from "./Game.js";
 import MainNavbar from "./MainNavbar.js";
+import Connector from "./database_components/Connector.js";
 
 
 // Style
@@ -50,6 +51,7 @@ class App extends Component{
                 <Route exact path="/" component={C1} />
                 <Route path="/stuff" component={C2} />
                 <Route path="/game" component={Game} />
+                <Route path="/db" component={Connector} />
               </div>
             </div>
           </div>

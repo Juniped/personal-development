@@ -1,17 +1,19 @@
 from flask import Flask
+from flask_cors import CORS
 import json
 import random
 # Custom Objects
 from models.example import Example
 
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route('/')
 def index():
     return "Here is some dummy data for you"
 
-@app.route('/dict')
+@app.route('/dict', methods=['POST','GET'])
 def dict_data():
     example_list = []
     for i in range(0,5):
