@@ -6,11 +6,24 @@ body {
   ol, ul {
     padding-left: 30px;
   }
-  
+
+  .game-board {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+/* 
+  .game-info {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  } */
+  .board-row {
+    display: flex;
+  }
+
   .board-row:after {
-    clear: both;
     content: "";
-    display: table;
   }
   
   .status {
@@ -18,22 +31,21 @@ body {
   }
   
   .square {
-    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 46px;
     border: 1px solid #999;
-    float: left;
-    font-size: 24px;
-    /* font-weight: bold; */
-    line-height: 34px;
-    height: 34px;
-    margin-right: -1px;
-    margin-top: -1px;
-    padding: 0;
-    text-align: center;
-    width: 34px;
+    width: 60px;
+    background: #fff;
+    height: 60px;
   }
-  
   .square:focus {
     outline: none;
+  }
+
+  .square.winner {
+    background-color: rgb(43, 226, 43);
   }
   
   .kbd-navigation .square:focus {
@@ -44,8 +56,3 @@ body {
     display: flex;
     flex-direction: row;
   }
-  
-  .game-info {
-    margin-left: 20px;
-  }
-  

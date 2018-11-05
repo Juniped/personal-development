@@ -5,14 +5,14 @@ import "../static/css/Game.css";
 function Square(props) {
   if (props.winner) {
     return (
-      <button className="square" onClick={props.onClick}>
-      <mark><b>{props.value}</b></mark>
+      <button className="square winner has-text-centered" onClick={props.onClick}>
+      <b>{props.value}</b>
     </button>
     )
   } else {
     return (
-      <button className="square" onClick={props.onClick}>
-        <small>{props.value}</small>
+      <button className="square has-text-centered" onClick={props.onClick}>
+        {props.value}
       </button>
     );
   }
@@ -26,10 +26,13 @@ class Board extends React.Component {
       for (let j = i; j < i + 3; j++) {
         let key="square"+j
         let winningLine = false;
+        
         if ( this.props.winningLines ){
-          winningLine = j in this.props.winningLines;
+          winningLine = (this.props.winningLines.includes(j));
         }
         if (winningLine) {
+          console.log(this.props.winningLines);
+          console.log(j);
           row.push(
             <Square 
               key={key} 
@@ -156,21 +159,21 @@ class Game extends Component {
     return (
       <div className="Game animated fadeInDown">
         <div className="container">
-          <div className="tile">
-            <div className="notification has-info">
+          {/* <div className="tile"> */}
+            <div className="notification has-info has-text-centered">
             <h3>
               Game code is from completion and expansion of tutorial found  
               <a href="https://reactjs.org/tutorial/tutorial.html#completing-the-game"> here</a>
             </h3>
             </div>
-          </div>
+          {/* </div> */}
         </div>
         <hr className="hr" style={hrStyle} />
         <div className="section">
           {/* <br /> */}
-          <div className="container">
+          <div className="container box">
             <div className="columns">
-              <div className="column is-one-quarter is-offset-one-quarter">
+              <div className="column is-one-half is-offset-one-quarter">
                 <div className="game-board">
                   <Board
                     squares={current.squares}
@@ -179,7 +182,7 @@ class Game extends Component {
                   />
                 </div>
               </div>
-              <div className="column is-one-quarter">
+              <div className="column">
                 <div className="game-info">
                   <div>{status}</div>
                   <button onClick={() => this.toggleOrder()}>{order}</button>
