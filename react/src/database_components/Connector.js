@@ -44,26 +44,31 @@ class DataForm extends Component {
             this.props.addData(resJson);
         })
         event.preventDefault();
+        this.setState({value:''});
 
     }
     render() {
         return (
             <div className="DataForm">
                 <form onSubmit={this.submitDatabase}>
-                    <label>
-                        Data:
-                        <input 
-                            id="data"
-                            type="text" 
-                            value={this.state.value}
-                            onChange={this.handleChange} /> 
-                    </label>
-                    <br />
-                    <input 
-                        className="button is-primary" 
-                        type="submit" 
-                        value="Submit!"
-                        />
+                    <div className="field has-addons">
+                        <p className="control has-icons-left is-expanded">
+                            <input className="input" type="text" placeholder="New Entry"
+                                value={this.state.value}
+                                onChange={this.handleChange} />
+                            <span className="icon is-small is-left">
+                                <i className="fas fa-database" />
+                            </span>
+                        </p>
+                        <p className="control">
+                            <button className="button is-primary" type="submit">
+                                <span className="icon is-small">
+                                    <i className="fas fa-plus" />
+                                </span>
+                            </button>
+                        </p>
+                    </div>
+
                 </form>
             </div>
         )
@@ -195,25 +200,29 @@ class DBView extends Component {
     render() {
         return(
             <div>
-                <div className="columns">
-                    <div className="container column">
-                        <DataForm addData={this.addData} examples={this.state.examples}/>
-                    </div>
-                    <div className="box container column">
-                        <div className="container has-text-centered">
-                            <a className="button is-primary" onClick={() => this.queryDatabase()}>
-                                Query Database
-                            </a>
-                            <a className="button is-danger" onClick={() => this.clearDB()}>
-                                Clear Results
-                            </a>
+                <div className="columns is-desktop is-centered">
+                    <div className="column is-one-third-desktop">
+                        <div className="notification has-text-centered">
+                            <DataForm addData={this.addData} examples={this.state.examples}/>
                         </div>
-                        <hr />
-                        <Data 
-                            loading={this.state.loading} 
-                            examples={this.state.examples}
-                            onClick={(id) => this.handleDelete(id)}
-                            />
+                    </div>
+                    <div className="column">
+                        <div className="box">
+                            <div className="has-text-centered">
+                                <a className="button is-primary" onClick={() => this.queryDatabase()}>
+                                    Refresh Database
+                                </a>
+                                <a className="button is-danger" onClick={() => this.clearDB()}>
+                                    Clear Results
+                                </a>
+                            </div>
+                            <hr />
+                            <Data 
+                                loading={this.state.loading} 
+                                examples={this.state.examples}
+                                onClick={(id) => this.handleDelete(id)}
+                                />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -225,7 +234,7 @@ class Connector extends Component{
     render(){
         return(
             <div className="database-connector">
-                <h1>The "DATABASE" Section</h1>
+                <h1 className="has-text-centered">Example Database</h1>
                 <hr />
                 <DBView />
             </div>

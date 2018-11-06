@@ -7,7 +7,6 @@ import Game from "./Game.js";
 import MainNavbar from "./MainNavbar.js";
 import Connector from "./database_components/Connector.js";
 
-
 // Style
 import "normalize.css";
 import "bulma/css/bulma.css";
@@ -39,6 +38,9 @@ class C2 extends Component {
 }
 
 class App extends Component{
+  constructor(props){
+    super(props);
+  }
   render(){
     return(
 
